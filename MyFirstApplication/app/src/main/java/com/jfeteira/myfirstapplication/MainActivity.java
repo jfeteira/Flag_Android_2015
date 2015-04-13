@@ -21,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
         final TextView xCounter = (TextView)findViewById(R.id.lbText);
         xCounter.setText("0");
 
+        //*... definição do Botão bem como do evento OnClick
         Button btIncr = (Button)findViewById(R.id.btnIncr);
         btIncr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        //*... definição do Botão bem como do evento OnClick
         Button btDecr = (Button)findViewById(R.id.btnDecr);
         btDecr.setOnClickListener(new View.OnClickListener() {
             @Override
