@@ -1,12 +1,15 @@
 package com.jfeteira.myfirstapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
@@ -14,7 +17,6 @@ import android.content.Context;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Context xContext;
     private TextView xCounter;
     private final static String LOG_TAG = "LOG_TAG";
 
@@ -26,8 +28,6 @@ public class MainActivity extends ActionBarActivity {
         * ... activity */
         Log.d(LOG_TAG, "onCreate");
         super.onCreate(savedInstanceState);
-
-        xContext = this;
 
         //*... serve para associar esta layou a activity que desenhamos
         setContentView(R.layout.activity_main);
@@ -52,7 +52,8 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(xContext, "Valor do contador e: " + xCounter.getText().toString() , Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Valor do contador é: " + xCounter.getText() , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "counter: " + txtCounter.getText(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -67,11 +68,35 @@ public class MainActivity extends ActionBarActivity {
                 }
                 else
                 {
-                    Toast.makeText(xContext, "Valor é inferior a ZERO", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Valor é ZERO", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
+
+        Button btNewActivity = new Button(this);
+        btNewActivity.setText("Multiplica por ...");
+        btNewActivity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.xRootLayout);
+        rootLayout.addView(btNewActivity);
+
+        btNewActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                   // Toast.makeText(getApplicationContext(), "Vou para a segunda Activity", Toast.LENGTH_SHORT).show();
+
+                Intent intentToOpenSecondActivity = new Intent(getApplicationContext(), Activity2.class);
+                intentToOpenSecondActivity.putExtra(Activity2.X_CONTADOR_VALUE_KEY, xCounter.getText());
+                /*startActivity(intentToOpenSecondActivity); */
+
+
+                startActivityForResult(intentToOpenSecondActivity, 1);
+            }
+        });
+
     }
 
 
@@ -128,4 +153,22 @@ public class MainActivity extends ActionBarActivity {
         Log.d(LOG_TAG, "onDestroy");
         super.onDestroy();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent xIntentResult) {
+        super.onActivityResult(requestCode, resultCode, xIntentResult);
+
+
+        if (xIntentResult == null) {
+            return;
+        }
+        String xNovoValor = xIntentResult.getStringExtra("COUNTER_VALUE");
+
+        Log.d("aaa ", xNovoValor.toString());
+
+        xCounter.setText(xNovoValor.toString());
+    }
+
+
+
 }
