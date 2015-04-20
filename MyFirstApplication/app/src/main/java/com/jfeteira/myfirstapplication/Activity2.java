@@ -35,6 +35,7 @@ public class Activity2 extends ActionBarActivity {
 
         final EditText etValMultiplica = new EditText(this);
         etValMultiplica.setTextSize(32);
+        etValMultiplica.setEms(15); // serve para limitar o tamanho do campo
         etValMultiplica.setFocusable(true);
         etValMultiplica.setInputType(InputType.TYPE_CLASS_NUMBER);
         rootLayout2.addView(etValMultiplica);
@@ -61,6 +62,10 @@ public class Activity2 extends ActionBarActivity {
                 Integer value1 = Integer.parseInt(lbCounter);
                 Integer value2 = Integer.parseInt(etValMultiplica.getText().toString());
                 Intent intentResult = new Intent();
+                //poderia usar o método getIntent() para ir buscar o que já tinha criado anteriormente
+                /*
+                * Intent intentResult = getIntent();
+                * */
                 intentResult.putExtra("COUNTER_VALUE", (value1 * value2) + "");
                 setResult(RESULT_OK, intentResult);
                 finish();
