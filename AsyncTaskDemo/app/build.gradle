@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+<<<<<<< HEAD
     compileSdkVersion 22
     buildToolsVersion "21.1.2"
 
@@ -8,6 +9,15 @@ android {
         applicationId "android.flag.pt.challenge_it.asynctaskdemo"
         minSdkVersion 15
         targetSdkVersion 22
+=======
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.jfeteira.asynctaskdemo"
+        minSdkVersion 15
+        targetSdkVersion 21
+>>>>>>> 28fc89a9931c27ed10dc2a650d885d22f690da4e
         versionCode 1
         versionName "1.0"
     }

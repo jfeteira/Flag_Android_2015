@@ -158,14 +158,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent xIntentResult) {
         super.onActivityResult(requestCode, resultCode, xIntentResult);
 
-
         if (xIntentResult == null) {
             return;
         }
         String xNovoValor = xIntentResult.getStringExtra("COUNTER_VALUE");
-
-        Log.d("aaa ", xNovoValor.toString());
-
         xCounter.setText(xNovoValor.toString());
     }
 

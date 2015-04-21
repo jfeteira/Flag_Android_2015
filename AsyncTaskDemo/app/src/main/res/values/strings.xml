@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AsyncTaskDemo</string>
+<<<<<<< HEAD
     <string name="btnName">Get city temperature</string>
     <string name="strCidadeNull">City name not found</string>
+=======
+>>>>>>> 28fc89a9931c27ed10dc2a650d885d22f690da4e
 </resources>
