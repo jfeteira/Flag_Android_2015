@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AsyncTaskDemo</string>
+    <string name="btnName">Get city temperature</string>
+    <string name="strCidadeNull">City name not found</string>
+</resources>

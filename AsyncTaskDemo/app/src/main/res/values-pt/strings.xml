@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AsyncTaskDemo</string>
+    <string name="btnName">Qual a temperatura da Cidade</string>
+    <string name="strCidadeNull">Cidade Desconhecida</string>
+</resources>
