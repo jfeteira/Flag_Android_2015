@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+<<<<<<< HEAD
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:id="@+id/txtCidade"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:id="@+id/txtPais"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/abc_action_button_min_height_material"
+        android:id="@+id/txtTemperature"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_button_material"
+        android:id="@+id/txtMaxMin"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="center">
+
+
+    </LinearLayout >
+
+    <LinearLayout
+        android:id="@+id/lyEscolhas"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content">
+        <EditText
+            android:id="@+id/editCidade"
+            android:layout_width="229dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:focusable="true"
+            android:gravity="center_vertical|fill_vertical"
+            android:inputType="textCapSentences">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lybts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:text="@string/btnName"
+            android:id="@+id/btnGet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal">
+        </Button>
+
+
+    </LinearLayout>
+</LinearLayout >
+
+=======
     android:layout_height="match_parent">
 
 </LinearLayout>
+>>>>>>> 28fc89a9931c27ed10dc2a650d885d22f690da4e
